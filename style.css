@@ -1,0 +1,103 @@
+html{
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.list{
+    margin:50px;
+}
+.header-item{
+    display:flex;
+    padding: 5px;
+}
+.header-item h2 {
+    margin:0;
+    padding:0 15px;
+}
+.fa-heart{
+    color:lightgrey;
+    font-size: 22px;
+}
+.fa-heart.favourite{
+    color:green;
+}
+.book-img{
+    cursor: pointer;
+}
+.book-item{
+    border:2px solid grey;
+    padding:5px 15px;
+    margin-bottom:10px;
+}
+.inner-item{
+    display:flex;
+    justify-content:space-between;
+}
+.inner-item p {
+    padding:10px 20px;
+    text-align: justify;
+    width:79%;
+}
+.inner-item img {
+    width:19%;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.form-inline{
+    display:flex;
+    justify-content: space-between;
+    margin:20px 100px;
+}
+.form-group{
+    width:68%;
+}
+.form-control{
+    width:100%;
+    padding:5px;
+}
+.form-button{
+    width:30%;
+}
+button{
+    padding:5px 15px;
+    border:2px solid  #5050e9;
+    background-color: #5050e9;
+    color:white;
+}
+.error{
+    color:red;
+    margin:50px;
+}
+
+.book{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px;
+
+}
+
+.book-img{
+    width: 40%;
+}
+
+.book-img img{
+    width: 350px;
+    height: 550px;
+}
+
+.book-info{
+    width: 60%;
+}
