@@ -5,10 +5,10 @@ $(function() {
 
     const getBook = async()=>{
         try{
-            const response = $.ajax({
+            const response = await $.ajax({
                 url : `https://www.googleapis.com/books/v1/volumes/${bookId}?key=${config.API_KEY}`,
                 type :"GET",
-                datatype : "json"
+                dataType : "json"
             })
             return response;
         }catch(error){
@@ -41,22 +41,24 @@ $(function() {
         const bookAuthors = $('<h3 class="book-authors"></h3>').text(data.volumeInfo.authors);
         $('.book-info').append(bookAuthors);
 
-        const bookDesc = $('<p></p>').text(data.volumeInfo.description);
-        $('.book-info').append(bookDesc);
+        const ul =$('<ul></ul>');
+        data.volumeInfo.categories.forEach((d)=>{
+            d.replace("/","-");
+            const li = $('<li></li>').text(d);
+            ul.append(li);
+        })
+        $('.book-info').append(ul);
+
+        const description = $('<p></p>').text(data.volumeInfo.description);
+        $('.book-info').append(description);
+
+        console.log(data)
 
         const publisher = $('<p></p>').text(data.volumeInfo.publisher);
         $('.book-info').append(publisher);
 
         const publishedDate = $('<p></p>').text(data.volumeInfo.publishedDate);
         $('.book-info').append(publishedDate);
-
-        // const ul =$('<ul></ul>');
-        // data.volumeInfo.categories.forEach((d)=>{
-        //     d.replace("/","-");
-        //     const li = $('<li></li>').text(d);
-        //     ul.append(li);
-        // })
-        // $('.book-info').append(ul);
 
 
 

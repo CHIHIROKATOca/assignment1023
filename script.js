@@ -50,8 +50,8 @@ $(function() {
             const innerDiv = $('<div class="inner-item"></div>');
             const img = $('<img class="book-img">').attr('src', data.image.thumbnail).attr("id",data.id);
             innerDiv.append(img);
-            // const desc = $('<p></p>').text(data.description);
-            // innerDiv.append(desc);
+            const desc = $('<p></p>').text(data.description);
+            innerDiv.append(desc);
             itemDiv.append(innerDiv);
             $('.list').append(itemDiv)
         })
